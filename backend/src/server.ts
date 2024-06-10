@@ -6,12 +6,19 @@ import csv from "csv-parser";
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Serve static files from the React app
+app.use(
+  express.static(path.join(__dirname, "../../frontend/stock-data/build"))
+);
+
+// API endpoint for the root
 app.get("/", (req, res) => {
   res.send(
     "Welcome to the financial data API. Use /api/financials or /api/financials/:interval to get data."
   );
 });
 
+// API endpoint for financials data
 app.get("/api/financials", (req, res) => {
   res.sendFile(path.join(__dirname, "data/stock-data.json"));
 });
@@ -27,6 +34,7 @@ const readCSV = (filePath: string) => {
   });
 };
 
+// API endpoint for financials data with interval
 app.get("/api/financials/:interval", async (req, res) => {
   const { interval } = req.params;
   let filePath = "";
@@ -47,6 +55,13 @@ app.get("/api/financials/:interval", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to read data" });
   }
+});
+
+// Serve React frontend for any other routes
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../../frontend/stock-data/build/index.html")
+  );
 });
 
 app.listen(port, () => {

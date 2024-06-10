@@ -7,7 +7,7 @@
       "config": { "includeFiles": ["backend/src/data/*"] }
     },
     {
-      "src": "frontend/package.json",
+      "src": "frontend/stock-data/package.json",
       "use": "@vercel/static-build"
     }
   ],
@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "/frontend/stock-data/build/$1"
     }
   ]
 }
