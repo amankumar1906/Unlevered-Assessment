@@ -28,9 +28,7 @@ const CandlestickChart: React.FC = () => {
     const fetchStockData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(
-          `https://unlevered-backend-3y13i2hop-aman-kumars-projects-a109b2b6.vercel.app/financials/${interval}`
-        );
+        const response = await axios.get(`/api/financials/${interval}`);
         const stockData = response.data.map((item: any) => {
           let date;
           if (interval === "M") {

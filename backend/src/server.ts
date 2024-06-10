@@ -8,11 +8,11 @@ const port = 5000;
 
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to the financial data API. Use /financials or /financials/:interval to get data."
+    "Welcome to the financial data API. Use /api/financials or /api/financials/:interval to get data."
   );
 });
 
-app.get("/financials", (req, res) => {
+app.get("/api/financials", (req, res) => {
   res.sendFile(path.join(__dirname, "stock-data.json"));
 });
 
@@ -27,7 +27,7 @@ const readCSV = (filePath: string) => {
   });
 };
 
-app.get("/financials/:interval", async (req, res) => {
+app.get("/api/financials/:interval", async (req, res) => {
   const { interval } = req.params;
   let filePath = "";
 

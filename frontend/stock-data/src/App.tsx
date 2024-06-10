@@ -36,9 +36,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<FinancialData>(
-          "https://unlevered-backend-3y13i2hop-aman-kumars-projects-a109b2b6.vercel.app/financials"
-        );
+        const response = await axios.get<FinancialData>("/api/financials");
         setData(response.data);
         setLoading(false);
       } catch (error) {
