@@ -4,7 +4,7 @@ import path from "path";
 import csv from "csv-parser";
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send(
@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/financials", (req, res) => {
-  res.sendFile(path.join(__dirname, "stock-data.json"));
+  res.sendFile(path.join(__dirname, "data/stock-data.json"));
 });
 
 const readCSV = (filePath: string) => {
