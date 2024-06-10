@@ -5,6 +5,7 @@ import CandlestickChart from "./components/CandleStickChart/CandlestickChart";
 import KeyRatios from "./components/KeyRatios/KeyRatios";
 import AnalystEstimates from "./components/AnalystEstimates/AnalystEstimates";
 import TopStocksMarquee from "./components/TopStocks/TopStocksMarquee";
+import NewsFeed from "./components/NewsFeed/NewsFeed";
 import Footer from "./components/Footer/Footer";
 import styles from "./App.module.css";
 import { Oval } from "react-loader-spinner";
@@ -17,8 +18,11 @@ interface FinancialData {
   market_ap: number;
   news: {
     [key: string]: {
+      title: string;
+      date: string;
       sentiment: { score: number; value: string };
       summary: string;
+      content: string;
     };
   };
   pb_ratio: number;
@@ -32,7 +36,6 @@ interface FinancialData {
 const App: React.FC = () => {
   const [data, setData] = useState<FinancialData | null>(null);
   const [loading, setLoading] = useState(true);
-  console.log(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -99,6 +102,7 @@ const App: React.FC = () => {
             )}
           />
         </div>
+        <NewsFeed news={data.news} />
       </div>
       <Footer />
     </div>

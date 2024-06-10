@@ -136,7 +136,7 @@ const CandlestickChart: React.FC = () => {
     <div className={styles.wrapper}>
       {showTooltip && (
         <Tooltip
-          message="* The chart is responsive. Click on the chart to see details for a specific date."
+          message="The chart is responsive. Click on the chart to see details for a specific date."
           onClose={() => setShowTooltip(false)}
         />
       )}
