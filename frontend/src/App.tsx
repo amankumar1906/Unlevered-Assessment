@@ -32,12 +32,13 @@ interface FinancialData {
 const App: React.FC = () => {
   const [data, setData] = useState<FinancialData | null>(null);
   const [loading, setLoading] = useState(true);
+  console.log(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get<FinancialData>(
-          "https://unlevered-assessment.vercel.app/api/financials"
+          `${process.env.REACT_APP_API_URL}`
         );
         setData(response.data);
         setLoading(false);

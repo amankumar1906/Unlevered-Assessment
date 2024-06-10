@@ -29,7 +29,7 @@ const CandlestickChart: React.FC = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://unlevered-assessment.vercel.app/api/financials/${interval}`
+          `${process.env.REACT_APP_API_URL}/${interval}`
         );
         const stockData = response.data.map((item: any) => {
           let date;
