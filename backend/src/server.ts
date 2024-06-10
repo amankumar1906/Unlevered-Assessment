@@ -4,12 +4,10 @@ import path from "path";
 import csv from "csv-parser";
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 // Serve static files from the React app
-app.use(
-  express.static(path.join(__dirname, "../../../frontend/stock-data/build"))
-);
+const buildPath = path.join(__dirname, "../../../frontend/stock-data/build");
+app.use(express.static(buildPath));
 
 // API endpoint for the root
 app.get("/", (req, res) => {
@@ -59,11 +57,8 @@ app.get("/api/financials/:interval", async (req, res) => {
 
 // Serve React frontend for any other routes
 app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../../../frontend/stock-data/build/index.html")
-  );
+  res.sendFile(path.join(buildPath, "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Export the express app for Vercel serverless functions
+export default app;
