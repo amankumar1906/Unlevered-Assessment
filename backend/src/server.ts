@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // Serve static files from the React app
 app.use(
-  express.static(path.join(__dirname, "../../frontend/stock-data/build"))
+  express.static(path.join(__dirname, "../../../frontend/stock-data/build"))
 );
 
 // API endpoint for the root
@@ -60,7 +60,7 @@ app.get("/api/financials/:interval", async (req, res) => {
 // Serve React frontend for any other routes
 app.get("*", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../../frontend/stock-data/build/index.html")
+    path.join(__dirname, "../../../frontend/stock-data/build/index.html")
   );
 });
 
