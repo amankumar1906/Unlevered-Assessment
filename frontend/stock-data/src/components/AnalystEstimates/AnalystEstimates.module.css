@@ -1,0 +1,65 @@
+.analystEstimates {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #9a83bf;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analystEstimates h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.analystEstimates .infoButton {
+  background-color: #9a83bf;
+  border: none;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.analystEstimates .infoButton:hover {
+  background-color: #7e6ba3;
+}
+
+.description {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.analystEstimates table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #444;
+}
+
+.analystEstimates td {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.analystEstimates td.bank {
+  font-weight: bold;
+}
+
+.analystEstimates td.estimate {
+  text-align: center;
+}

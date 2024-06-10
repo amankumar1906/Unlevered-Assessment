@@ -1,0 +1,65 @@
+.keyRatios {
+  color: #fff;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #9a83bf;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyRatios h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.keyRatios .infoButton {
+  background-color: #9a83bf;
+  border: none;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.keyRatios .infoButton:hover {
+  background-color: #7e6ba3;
+}
+
+.description {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.keyRatios table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #444;
+}
+
+.keyRatios td {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.keyRatios td.key {
+  font-weight: bold;
+}
+
+.keyRatios td.value {
+  text-align: center;
+}
